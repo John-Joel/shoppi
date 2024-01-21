@@ -1,6 +1,6 @@
 {
-  "homepage": "https://John-Joel.github.io/Shoppi",
-  "name": "amazon",
+  "homepage": "https://John-Joel.github.io/shoppi",
+  "name": "shoppi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
