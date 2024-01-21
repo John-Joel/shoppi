@@ -34,7 +34,7 @@ const LoginPage = (props) => {
         if (user_record.some((v) => {
             return (v.email == inputs.email) && (v.password == inputs.password)
         })) {
-            alert("Login Success")
+            alert("success")
             let current_user = user_record.filter((v) => {
                 return v.email == inputs.email && v.password == inputs.password
             })[0]
@@ -44,7 +44,7 @@ const LoginPage = (props) => {
             return navigate("/")
         }
         else {
-            alert("Login failed");
+            alert("login fails");
         }
     }
     return (

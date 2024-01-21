@@ -13,12 +13,14 @@ const Header = (props) => {
     };
 
     const handleAddAccount = () => {
-        return Navigate("/RegisterPage");
+        return Navigate("/RegistersPage");
     }
 
     const handleClearData = () => {
         localStorage.removeItem("name");
         localStorage.removeItem("email");
+        localStorage.removeItem("users");
+        ;
         window.location.reload();
     }
     // console.log(localStorage("users"));
@@ -26,7 +28,7 @@ const Header = (props) => {
     return (
         <>
             <div className='header'>
-                <div id="logo" onClick={() => Navigate('/')}>
+                <div id="logo">
                     <FaOpencart className='img' />
                     <div id="logoName">Shoppi</div>
                 </div>

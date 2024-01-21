@@ -40,37 +40,30 @@ function App() {
       )
     }
   }
-
-  const handleDeleteItem = (product) => {
-    // Filter out the item to be removed from the cart
-    const updatedCart = cart.filter(item => item.id !== product.id);
-    setCart(updatedCart);
-  };
   function convertToINR(price) {
     const conversionRate = 80;
-    const inrPrice = (price * conversionRate);
+    const inrPrice = price * conversionRate;
     return inrPrice.toFixed(2);
   }
 
   const myroute = createBrowserRouter([
     {
       path: "/", element: <Header cart={cart} ToggleCart={ToggleCart} setSearchTerm={setSearchTerm}
-        handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
-    },
-    // children: [
-    { path: "/RegisterPage", element: <RegisterPage /> },
-    { path: "/LoginPage", element: <LoginPage /> },
-  ]);
+        handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />,
+      children: [
+        { path: "/RegisterPage", element: <RegisterPage /> },
+        { path: "/LoginPage", element: <LoginPage /> },
+      ],
+    },]);
 
   return (
     <>
       <RouterProvider router={myroute} />
       {/* <Header cart={cart} /> */}
-      {isCartVisible ? (<Cart cart={cart} handleAddProduct={handleAddProduct}
-        handleDeleteItem={handleDeleteItem} convertToINR={convertToINR}
-        handleRemoveProduct={handleRemoveProduct} />) : (<Product searchTerm={searchTerm}
+      {isCartVisible ? <Cart cart={cart} handleAddProduct={handleAddProduct}
+        handleRemoveProduct={handleRemoveProduct} /> : <Product searchTerm={searchTerm}
           handleAddProduct={handleAddProduct} convertToINR={convertToINR} />
-      )}
+      }
     </>
   );
 }
