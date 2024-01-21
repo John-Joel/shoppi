@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Shoppi/static/css/main.6c113acb.css",
-    "main.js": "/Shoppi/static/js/main.ff94f101.js",
-    "static/js/787.c075ba41.chunk.js": "/Shoppi/static/js/787.c075ba41.chunk.js",
-    "index.html": "/Shoppi/index.html",
-    "main.6c113acb.css.map": "/Shoppi/static/css/main.6c113acb.css.map",
-    "main.ff94f101.js.map": "/Shoppi/static/js/main.ff94f101.js.map",
-    "787.c075ba41.chunk.js.map": "/Shoppi/static/js/787.c075ba41.chunk.js.map"
+    "main.css": "/shoppi/static/css/main.6c113acb.css",
+    "main.js": "/shoppi/static/js/main.ebf4c56c.js",
+    "static/js/787.8d82956a.chunk.js": "/shoppi/static/js/787.8d82956a.chunk.js",
+    "index.html": "/shoppi/index.html",
+    "main.6c113acb.css.map": "/shoppi/static/css/main.6c113acb.css.map",
+    "main.ebf4c56c.js.map": "/shoppi/static/js/main.ebf4c56c.js.map",
+    "787.8d82956a.chunk.js.map": "/shoppi/static/js/787.8d82956a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c113acb.css",
-    "static/js/main.ff94f101.js"
+    "static/js/main.ebf4c56c.js"
   ]
 }
