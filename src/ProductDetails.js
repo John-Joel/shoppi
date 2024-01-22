@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsChevronDoubleLeft, BsChevronDoubleRight, BsFillXCircleFill } from "react-icons/bs";
-import "./ProductDetail.css"
+import "./ProductDetails.css"
 
 const ProductDetails = ({ product, onClose, handleAddProduct, convertToINR }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);

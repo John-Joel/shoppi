@@ -49,21 +49,21 @@ function App() {
   const myroute = createBrowserRouter([
     {
       path: "/", element: <Header cart={cart} ToggleCart={ToggleCart} setSearchTerm={setSearchTerm}
-        handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />,
-      children: [
-        { path: "/RegisterPage", element: <RegisterPage /> },
-        { path: "/LoginPage", element: <LoginPage /> },
-      ],
-    },]);
+        handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />
+    },
+    // children: [
+    { path: "/RegisterPage", element: <RegisterPage /> },
+    { path: "/LoginPage", element: <LoginPage /> },
+  ]);
 
   return (
     <>
       <RouterProvider router={myroute} />
       {/* <Header cart={cart} /> */}
-      {isCartVisible ? <Cart cart={cart} handleAddProduct={handleAddProduct}
-        handleRemoveProduct={handleRemoveProduct} /> : <Product searchTerm={searchTerm}
+      {isCartVisible ? (<Cart cart={cart} handleAddProduct={handleAddProduct}
+        handleRemoveProduct={handleRemoveProduct} />) : (<Product searchTerm={searchTerm}
           handleAddProduct={handleAddProduct} convertToINR={convertToINR} />
-      }
+      )}
     </>
   );
 }

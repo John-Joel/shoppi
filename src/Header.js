@@ -1,5 +1,5 @@
 import { React, useEffect } from 'react';
-import './HeaderCss.css';
+import './Header.css';
 import { FaOpencart, FaCartPlus, FaUserPlus } from 'react-icons/fa';
 import Cart from './Cart';
 import { Link, useNavigate } from 'react-router-dom'
@@ -13,7 +13,7 @@ const Header = (props) => {
     };
 
     const handleAddAccount = () => {
-        return Navigate("/RegistersPage");
+        return Navigate("/RegisterPage");
     }
 
     const handleClearData = () => {

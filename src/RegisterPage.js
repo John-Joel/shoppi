@@ -22,10 +22,7 @@ const RegisterPage = (props) => {
         let user_records = new Array();
         user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
         let errors = initialStateErrors
-        var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //email should contain one @and.also in lowercase
-        const nameFormat = /[^a-z]/ig;//name sholud be in alphabet only
-        const passwordFormat = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-+.]).{6,20}$/;
-        //password should contain one lowercase, one uppercase,one number,one special character also it between (6,20) character
+        var emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (inputs.name == "") {
             errors.name.required = true;
         }
@@ -43,13 +40,14 @@ const RegisterPage = (props) => {
             alert("You have already sign in, Move to login page");
             return navigate("/LoginPage")
         }
-        else if ((nameFormat.test(inputs.name)) && (emailFormat.test(inputs.email)) && (passwordFormat.test(inputs.password))) {
+        else if ((inputs.name !== "") && (emailFormat.test(inputs.email)) && (inputs.password !== "")) {
             user_records.push({
                 "name": inputs.name,
                 "email": inputs.email,
                 "password": inputs.password
             })
             localStorage.setItem("users", JSON.stringify(user_records))
+
             return navigate("/LoginPage")
         }
     }

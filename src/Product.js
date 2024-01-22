@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ProductDetails from './ProductDetails';
-import { FaStar } from 'react-icons/fa'
+import ProductDetails from './ProductDetails.js';
 import './Product.css'
 
 const Product = (props) => {
@@ -193,6 +192,8 @@ const Product = (props) => {
 
             </div>
 
+
+
             < div className='content'>
                 {selectedProduct ? (
                     <ProductDetails product={selectedProduct} Product={Product}
@@ -205,15 +206,7 @@ const Product = (props) => {
                                     <img src={product.images[0]} alt='product' />
                                 </div>
                                 <h5 className='productInfo'>{product.title}</h5>
-                                <div className='priceContainer'>
-                                    <p className='priceDiscount'>&#8377;{((props.convertToINR(product.price)) *
-                                        (1 - (product.discountPercentage / 100))).toFixed(2)}</p>
-                                    <p className='price'><del>&#8377;{props.convertToINR(product.price)}</del></p>
-                                    <p className='pricePercent'>({product.discountPercentage}% off)</p>
-                                </div>
-                                <button className='productRatings'>{product.rating}
-                                    <div><FaStar className='starIcon' /></div></button>
-                                <p className='productStock'>Stock available: {product.stock}</p>
+                                <p className='price'>Price: &#8377;{props.convertToINR(product.price)}</p>
                             </div>
                         ))}
                     </div>
